@@ -16,16 +16,12 @@
     {
       "name": "merchants",
       "path": "/merchants",
-      "realmRoles": [
-        "merchant"
-      ]
+      "realmRoles": ["merchant"]
     },
     {
       "name": "clients",
       "path": "/clients",
-      "realmRoles": [
-        "client"
-      ]
+      "realmRoles": ["client"]
     }
   ],
   "clients": [
@@ -36,22 +32,15 @@
       "publicClient": true,
       "standardFlowEnabled": true,
       "implicitFlowEnabled": false,
-      "directAccessGrantsEnabled": false,
+      "directAccessGrantsEnabled": true,
       "serviceAccountsEnabled": false,
       "frontchannelLogout": true,
       "redirectUris": [
         "com.pawtner.oauth://oauthredirect",
         "com.pawtner://callback"
       ],
-      "webOrigins": [
-        "+"
-      ],
-      "defaultClientScopes": [
-        "profile",
-        "email",
-        "roles",
-        "web-origins"
-      ],
+      "webOrigins": ["+"],
+      "defaultClientScopes": ["profile", "email", "roles", "web-origins"],
       "optionalClientScopes": [
         "address",
         "phone",
@@ -61,7 +50,20 @@
       "attributes": {
         "pkce.code.challenge.method": "S256",
         "post.logout.redirect.uris": "+"
-      }
+      },
+      "protocolMappers": [
+        {
+          "name": "subject",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-sub-mapper",
+          "consentRequired": false,
+          "config": {
+            "access.token.claim": "true",
+            "id.token.claim": "true",
+            "introspection.token.claim": "true"
+          }
+        }
+      ]
     }
   ],
   "users": [
@@ -72,9 +74,7 @@
       "firstName": "Merchant",
       "lastName": "Demo",
       "email": "merchant.demo@pawtner.local",
-      "groups": [
-        "/merchants"
-      ],
+      "groups": ["/merchants"],
       "credentials": [
         {
           "type": "password",
@@ -90,9 +90,7 @@
       "firstName": "Client",
       "lastName": "Demo",
       "email": "client.demo@pawtner.local",
-      "groups": [
-        "/clients"
-      ],
+      "groups": ["/clients"],
       "credentials": [
         {
           "type": "password",

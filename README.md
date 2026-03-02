@@ -46,6 +46,20 @@ Use baseline/prod mode outside local development and manage users through your u
 - Issuer format: `http://localhost:${KEYCLOAK_HTTP_PORT}/realms/pawtner` (default port in `.env` is `18080`).
 - Detailed handoff and validation checklist: `MARKETPLACE_AUTH_HANDOFF.md`.
 
+## Marketplace demo data seed (for API/APP integration)
+
+- Seed source is mapped from `../pawtner-app/src/features/shared/data/mockData.ts`.
+- This creates and populates local tables in `pawtner_db`:
+  - `marketplace_users`, `merchant_profiles`, `marketplace_offers`
+  - `merchant_reviews`, `marketplace_orders`, `marketplace_monthly_sales_metrics`
+- Run:
+
+```bash
+./scripts/seed-marketplace-demo.sh
+```
+
+- Re-running is safe (idempotent upserts).
+
 ## Pawtner Keycloak theme
 
 - A custom login theme is provided at `infra/keycloak/themes/pawtner`.
