@@ -1,0 +1,212 @@
+:root {
+  --pawtner-bg: #f8fafc;
+  --pawtner-surface: #ffffff;
+  --pawtner-text: #0f172a;
+  --pawtner-muted: #475569;
+  --pawtner-border: #e2e8f0;
+  --pawtner-primary: #10b981;
+  --pawtner-primary-dark: #059669;
+  --pawtner-danger: #dc2626;
+}
+
+body.login-pf {
+  background: radial-gradient(circle at top right, #d1fae5 0%, var(--pawtner-bg) 45%);
+  background-image: radial-gradient(circle at top right, #d1fae5 0%, var(--pawtner-bg) 45%) !important;
+  color: var(--pawtner-text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.login-pf-page,
+.login-pf-page body {
+  background-image: radial-gradient(circle at top right, #d1fae5 0%, var(--pawtner-bg) 45%) !important;
+}
+
+#kc-header {
+  background: transparent !important;
+}
+
+#kc-header-wrapper {
+  background: rgba(248, 250, 252, 0.92);
+  border: 1px solid var(--pawtner-border);
+  border-radius: 16px;
+  color: var(--pawtner-text);
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  text-shadow: none;
+}
+
+#kc-header-wrapper::after {
+  color: var(--pawtner-muted);
+  content: "Ethical breeding platform";
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-top: 6px;
+}
+
+#kc-content-wrapper {
+  margin-top: 24px;
+}
+
+#kc-form-wrapper,
+#kc-social-providers,
+#kc-info-wrapper {
+  background: var(--pawtner-surface);
+  border: 1px solid var(--pawtner-border);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px -30px rgba(15, 23, 42, 0.45);
+}
+
+#kc-form-wrapper {
+  padding: 28px;
+}
+
+.login-pf-page .card-pf {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  max-width: 460px;
+  width: 100%;
+}
+
+.login-pf-page .card-pf p {
+  color: var(--pawtner-muted);
+}
+
+.pf-c-form-control,
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  border: 1px solid var(--pawtner-border);
+  border-radius: 16px;
+  box-shadow: none;
+  font-size: 15px;
+  min-height: 48px;
+  padding: 10px 14px;
+}
+
+.pf-c-form-control:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  border-color: var(--pawtner-primary);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.pf-c-button.pf-m-primary,
+#kc-login,
+input[type="submit"] {
+  background: var(--pawtner-primary);
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px -14px rgba(16, 185, 129, 0.9);
+  color: #ffffff;
+  font-weight: 700;
+  min-height: 48px;
+}
+
+.pf-c-button.pf-m-primary:hover,
+#kc-login:hover,
+input[type="submit"]:hover {
+  background: var(--pawtner-primary-dark);
+}
+
+#kc-form-options,
+#kc-registration-container,
+#kc-info {
+  color: var(--pawtner-muted);
+}
+
+#kc-locale {
+  position: relative;
+}
+
+#kc-locale-wrapper {
+  align-items: center;
+  display: inline-flex;
+}
+
+#kc-current-locale-link {
+  background: var(--pawtner-surface);
+  border: 1px solid var(--pawtner-border);
+  border-radius: 12px;
+  color: var(--pawtner-text);
+  font-weight: 600;
+  padding: 6px 10px;
+  text-decoration: none;
+}
+
+#kc-locale ul {
+  background: var(--pawtner-surface);
+  border: 1px solid var(--pawtner-border);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px -18px rgba(15, 23, 42, 0.5);
+  display: none !important;
+  left: 0;
+  margin: 6px 0 0;
+  min-width: 180px;
+  padding: 6px 0;
+  position: absolute;
+  top: 100%;
+  z-index: 40;
+}
+
+#kc-locale ul li {
+  list-style: none;
+}
+
+#kc-locale ul li a {
+  color: var(--pawtner-text);
+  display: block;
+  font-weight: 500;
+  padding: 8px 12px;
+}
+
+#kc-locale-wrapper:hover ul,
+#kc-locale-wrapper:focus-within ul,
+#kc-locale-wrapper.kc-dropdown-open ul,
+#kc-locale.kc-locale-open ul {
+  display: block !important;
+}
+
+#kc-registration a,
+#kc-info a,
+#kc-social-providers a,
+.login-pf a {
+  color: var(--pawtner-primary-dark);
+  font-weight: 600;
+}
+
+#kc-registration a:hover,
+#kc-info a:hover,
+#kc-social-providers a:hover,
+.login-pf a:hover {
+  text-decoration: underline;
+}
+
+.alert-error,
+.pf-c-alert.pf-m-danger {
+  border-left-color: var(--pawtner-danger);
+}
+
+.pf-c-alert__title,
+.alert-error .kc-feedback-text {
+  color: var(--pawtner-danger);
+}
+
+@media (max-width: 767px) {
+  #kc-header-wrapper {
+    font-size: 28px;
+  }
+
+  #kc-form-wrapper {
+    border-radius: 20px;
+    padding: 22px;
+  }
+}
