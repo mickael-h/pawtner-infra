@@ -1,0 +1,105 @@
+{
+  "ifResourceExists": "OVERWRITE",
+  "roles": {
+    "realm": [
+      {
+        "name": "merchant",
+        "description": "Marketplace merchant with seller dashboard access"
+      },
+      {
+        "name": "client",
+        "description": "Marketplace client with buyer dashboard access"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "name": "merchants",
+      "path": "/merchants",
+      "realmRoles": [
+        "merchant"
+      ]
+    },
+    {
+      "name": "clients",
+      "path": "/clients",
+      "realmRoles": [
+        "client"
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "pawtner-mobile",
+      "name": "Pawtner Mobile",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "frontchannelLogout": true,
+      "redirectUris": [
+        "com.pawtner.oauth://oauthredirect",
+        "com.pawtner://callback"
+      ],
+      "webOrigins": [
+        "+"
+      ],
+      "defaultClientScopes": [
+        "profile",
+        "email",
+        "roles",
+        "web-origins"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "+"
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "merchant_demo",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Merchant",
+      "lastName": "Demo",
+      "email": "merchant.demo@pawtner.local",
+      "groups": [
+        "/merchants"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "dev-merchant-123",
+          "temporary": false
+        }
+      ]
+    },
+    {
+      "username": "client_demo",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Client",
+      "lastName": "Demo",
+      "email": "client.demo@pawtner.local",
+      "groups": [
+        "/clients"
+      ],
+      "credentials": [
+        {
+          "type": "password",
+          "value": "dev-client-123",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}
