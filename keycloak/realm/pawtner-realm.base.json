@@ -31,14 +31,16 @@
       "name": "merchants",
       "path": "/merchants",
       "realmRoles": [
-        "merchant"
+        "merchant",
+        "offline_access"
       ]
     },
     {
       "name": "clients",
       "path": "/clients",
       "realmRoles": [
-        "client"
+        "client",
+        "offline_access"
       ]
     }
   ],

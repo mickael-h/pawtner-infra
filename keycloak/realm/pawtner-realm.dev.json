@@ -27,12 +27,12 @@
     {
       "name": "merchants",
       "path": "/merchants",
-      "realmRoles": ["merchant"]
+      "realmRoles": ["merchant", "offline_access"]
     },
     {
       "name": "clients",
       "path": "/clients",
-      "realmRoles": ["client"]
+      "realmRoles": ["client", "offline_access"]
     }
   ],
   "clients": [
@@ -86,6 +86,7 @@
       "lastName": "Demo",
       "email": "merchant.demo@pawtner.local",
       "groups": ["/merchants"],
+      "realmRoles": ["offline_access"],
       "credentials": [
         {
           "type": "password",
@@ -102,6 +103,7 @@
       "lastName": "Demo",
       "email": "client.demo@pawtner.local",
       "groups": ["/clients"],
+      "realmRoles": ["offline_access"],
       "credentials": [
         {
           "type": "password",

@@ -13,6 +13,17 @@ docker compose up -d
 
 By default, Keycloak imports `keycloak/realm/pawtner-realm.dev.json` through `KEYCLOAK_REALM_IMPORT_FILE`.
 Then `keycloak-bootstrap` applies an idempotent partial import from `KEYCLOAK_BOOTSTRAP_FILE` so roles/groups/client/users are enforced even when the realm already exists in the database.
+If runtime drift causes offline token issues (`offline_access`), run:
+
+```bash
+./scripts/keycloak-fix-offline-access.sh
+```
+
+Validate offline token + refresh + API context flow:
+
+```bash
+./scripts/validate-offline-flow.sh
+```
 
 ## Health
 
@@ -40,6 +51,7 @@ Use baseline/prod mode outside local development and manage users through your u
 
 - Canonical identity key: `sub`.
 - Canonical authorization source: `realm_access.roles` containing `merchant` or `client`.
+- Offline sessions: app requests `offline_access`; realm/client bootstrap ensures offline scope + role are available for mobile refresh token flows.
 - Permission intent:
   - `merchant`: seller dashboard + create/publish/update/delete own offers.
   - `client`: marketplace browsing + personal order dashboard.
